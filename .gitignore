@@ -1,0 +1,6 @@
+**/int_driver
+**/msis21.parm
+**/build/
+**/*.nc
+__pycache__
+.python-version
