@@ -9,7 +9,7 @@ project(MSIS2
 set(FETCHCONTENT_UPDATES_DISCONNECTED_MSIS2 true)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
-include(cmake/msis2.cmake)
+add_subdirectory(msis2.1)
 
 add_executable(int_driver intdriver.f90)
 target_link_libraries(int_driver PRIVATE msis2)

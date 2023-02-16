@@ -1,3 +1,6 @@
+! This software incorporates the MSIS empirical atmospheric model software
+! designed and provided by NRL. Use is governed by the Open Source Academic
+! research License Agreement contained in the file msis2.1/nrlmsis2.1_license..txt
 program msis2int_driver
 
   use, intrinsic:: iso_fortran_env, only: stderr=>error_unit
@@ -52,7 +55,7 @@ program msis2int_driver
 
   integer, parameter :: np    = 150 ! number of vertical input levels
   integer, parameter :: npref = 140 ! reference level at which to begin helium
-  real,    parameter :: ppref = 3.22980e-08 ! WAM reference level pressure, Pa
+  real,    parameter :: ppref = 3.22980e-08 ! WAM reference level pressure (hPa)
 
   integer, parameter :: nz = 91   ! number of vertical output points
   integer, parameter :: ny = 91   ! number of latitudinal points  (input/output)
@@ -85,7 +88,7 @@ program msis2int_driver
 
   character(255) :: argv
 
-  real :: switch_legacy(1:25)
+  real(4) :: switch_legacy(1:25)
 
   integer :: ix, iy, iz, it, ip, izd
 
@@ -227,7 +230,6 @@ end program
 subroutine ghp8(day, utsec, z0, glat, glon, f107a, f107, ap, pres, alt, dn, tn)
 
   use msis_constants, only: kB,Na,g0,rp
-  use msis_init, only          : msisinit
   use msis_calc, only          : msiscalc
   use msis_utils, only         : alt2gph
 
