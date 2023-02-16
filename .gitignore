@@ -1,7 +1,8 @@
 **/int_driver
-**/msis21.parm
 **/build/
 **/*.nc
 __pycache__
 .python-version
 *.save
+**/msis21.parm
+!msis2.1/src/msis2.1/msis21.parm
