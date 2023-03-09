@@ -371,7 +371,7 @@ subroutine write_nc(fname, nx, ny, nz, nt, lon, lat, hlevs, outdata, outhe, outo
   dimids = (/ x_dimid, y_dimid, z_dimid, t_dimid /)
 
   call check(nf90_def_var(ncid, "den", NF90_FLOAT, dimids, den_varid))
-  call check(nf90_put_att(ncid, den_varid, "units","m^-3"))
+  call check(nf90_put_att(ncid, den_varid, "units","kg m^-3"))
   call check(nf90_put_att(ncid, den_varid, "standard_name","neutral density"))
 
 !  call check(nf90_def_var(ncid, "he",  NF90_FLOAT, dimids, he_varid))
